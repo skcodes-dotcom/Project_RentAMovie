@@ -14,7 +14,9 @@
         {% for movie in movies %} <!-- Iterate over all movies stored in DB. -->
         <tr>
             <!-- Rendering values. -->
-            <td>{{ movie.title }}</td>
+            <td>
+                <a href="{% url 'movies:detail' movie.id %}"> {{ movie.title }}</a> <!-- Add a link to each movie to get the id of the movie dynamically. -->
+            </td>
             <td>{{ movie.genre }}</td>
             <td>{{movie.number_in_stock }}</td>
             <td>{{ movie.daily_rate }}</td>
